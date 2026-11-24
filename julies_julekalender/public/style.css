@@ -1,0 +1,310 @@
+:root {
+  color-scheme: dark;
+  --pine: #10271f;
+  --paper: #fff0d9;
+  --gold: #e8c792;
+  --muted: #d5c6ae;
+  --wine: #772f42;
+  --display: Georgia, serif;
+  --body: system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 0%, #25483a, var(--pine) 42rem, #091911 100%);
+  color: var(--paper);
+  font: 1rem/1.65 var(--body);
+}
+
+main {
+  position: relative;
+  width: min(100% - 2.5rem, 66rem);
+  margin-inline: auto;
+  padding-block: clamp(1.25rem, 5vw, 4rem) 2rem;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.greeting {
+  margin-block-end: .9rem;
+  text-align: center;
+}
+
+.greeting h1 {
+  margin: 0;
+  color: var(--gold);
+  font-family: var(--display);
+  font-size: clamp(1.45rem, 5.8vw, 2rem);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.greeting p {
+  margin: .15rem 0 0;
+  color: #efb9b6;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.count {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .2rem 1rem;
+  margin-block: 0 1rem;
+  padding: .8rem 1.1rem;
+  border-block: 1px solid #e8c79240;
+  color: var(--muted);
+}
+
+.count strong {
+  color: var(--gold);
+  font: 1.2rem var(--display);
+  font-variant-numeric: tabular-nums;
+}
+
+#doors {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: .75rem;
+}
+
+.door {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .25rem;
+  min-width: 0;
+  aspect-ratio: 1.17;
+  padding: .45rem .2rem;
+  border: 1px solid #ddb78180;
+  border-radius: .55rem;
+  background: linear-gradient(145deg, #995165, var(--wine));
+  color: var(--paper);
+  font: clamp(1.65rem, 4vw, 3rem)/1 var(--display);
+  box-shadow: 0 .35rem .7rem #07150e66;
+  cursor: pointer;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.door::before {
+  content: "";
+  position: absolute;
+  inset: .26rem;
+  border: 1px solid #e8c79230;
+  border-radius: .34rem;
+  pointer-events: none;
+}
+
+.door small {
+  color: var(--gold);
+  font: .83rem/1.2 var(--body);
+}
+
+.door:disabled {
+  border-color: #d1b88755;
+  background: linear-gradient(145deg, #2a493c, #1a342a);
+  color: #e2d5bc;
+  cursor: not-allowed;
+}
+
+.door:disabled:nth-child(3n + 2) {
+  background: linear-gradient(145deg, #4b343b, #38272f);
+}
+
+.door.opened {
+  background: linear-gradient(145deg, #7d5139, #5e382e);
+}
+
+.door[data-day="24"] {
+  border-color: var(--gold);
+}
+
+.door:focus-visible,
+#close:focus-visible,
+#media a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+@media (hover: hover) {
+  .door:not(:disabled):hover {
+    transform: translateY(-4px);
+    box-shadow: 0 .65rem 1.2rem #07150e99;
+  }
+}
+
+.footer {
+  margin-top: 2.2rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  top: -30px;
+  color: #fff;
+  opacity: .22;
+  animation: fall linear infinite;
+}
+
+.heart {
+  top: auto;
+  bottom: -30px;
+  color: #efb9b6;
+  animation-name: float;
+}
+
+@keyframes fall {
+  to { transform: translate(45px, 110vh) rotate(180deg); }
+}
+
+@keyframes float {
+  to { transform: translate(-45px, -110vh) rotate(-30deg); }
+}
+
+dialog {
+  width: min(92%, 34rem);
+  max-height: 85vh;
+  overflow: auto;
+  padding: 2.75rem clamp(1.4rem, 5vw, 3rem);
+  border: 1px solid #a56950;
+  border-radius: .8rem;
+  background: linear-gradient(145deg, #fff8e8, #f8e5ce);
+  color: #552b37;
+  color-scheme: light;
+  box-shadow: 0 1.25rem 5rem #0008;
+  text-align: center;
+}
+
+dialog[open] {
+  animation: reveal .28s ease-out;
+}
+
+dialog::backdrop {
+  background: #07150ebd;
+  backdrop-filter: blur(6px);
+}
+
+dialog .eyebrow {
+  color: #874a32;
+}
+
+dialog h2 {
+  margin-block: .8rem;
+  font: clamp(2rem, 6vw, 3rem)/1.08 var(--display);
+}
+
+#message {
+  white-space: pre-wrap;
+}
+
+.gift-card {
+  margin-top: 1.4rem;
+  padding: 1rem clamp(.9rem, 4vw, 1.5rem);
+  border: 4px double #d3ab72;
+  border-radius: .65rem;
+  background: linear-gradient(145deg, #783d4c, #592638);
+  color: #fff2de;
+}
+
+.gift-card .eyebrow {
+  color: var(--gold);
+}
+
+.gift-card h3 {
+  margin: .35rem 0;
+  font: 1.45rem/1.2 var(--display);
+}
+
+.gift-card p {
+  margin: .55rem 0 0;
+}
+
+#close {
+  position: absolute;
+  top: .4rem;
+  right: .5rem;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+#media img,
+#media video {
+  max-width: 100%;
+  border-radius: .5rem;
+}
+
+#media audio {
+  max-width: 100%;
+}
+
+#media a {
+  color: #6e2941;
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 43rem) {
+  #doors {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .5rem;
+  }
+}
+
+@media (max-width: 24rem) {
+  main {
+    width: calc(100% - 1.5rem);
+  }
+
+  #doors {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #particles {
+    display: none;
+  }
+
+  .door {
+    transition: none;
+  }
+
+  .door:not(:disabled):hover {
+    transform: none;
+  }
+
+  dialog[open] {
+    animation: none;
+  }
+}
