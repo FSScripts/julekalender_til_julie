@@ -3,7 +3,7 @@ const letters=[
 ['Velkommen, min musse','Glædelig 1. december, min dejlige musse ❤️ Jeg har lavet den her kalender til dig, fordi du fortjener lidt ekstra kærlighed. Jeg håber, den får dig til at smile hver dag.'],
 ['Sådan startede det','Tænk at det hele startede på Snapchat. Jeg er så glad for, at vi begyndte at skrive sammen, og at det endte med at blive os to.'],
 ['Dit smil','Jeg bliver aldrig træt af dit smil. Jeg elsker at se dig glad, især når det er mig, der får dig til at smile.'],
-['En sang til dig','Når du hører den her sang, så tænk på os. ❤️',{type:'link',url:'https://www.youtube.com/results?search_query=Ed+Sheeran+Perfect'}],
+['En sang til dig','Når du hører den her sang, så tænk på os. ❤️',{type:'link',url:'https://suno.com/s/0XU62vuShF7qtDbF'}],
 ['Fem ting jeg elsker','Dit smil. Din personlighed. Hvor sød du er. Måden du behandler mig på. Og hvordan en helt almindelig dag bliver bedre sammen med dig.'],
 ['Vores første møde','Jeg tænker stadig tilbage på første gang, vi skulle mødes. Jeg ville gerne opleve den dag igen, nu hvor jeg ved, hvor meget du betyder for mig.'],
 ['Kom her, min Mulle','Mine yndlingskram er dem, hvor ingen af os har travlt med at give slip. Jeg glæder mig allerede til det næste. ❤️'],
